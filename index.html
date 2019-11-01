@@ -4,7 +4,101 @@
 		<title>Marti Kingisepp</title>
 		<link rel="stylesheet" href="css.css">
 	</head>
-	<body>
-		<h1>Lambi pealkiri</h1>
+	<body onload="aeg()">
+		<div class="pealkiri">
+			<h1 id="pealkiri">Marti Kingisepp</h1>
+			<h1 id="ttu" style="display: none; text-decoration: none; color: black;"><a href="http://www.ttu.ee" style="text-decoration: none; color: black;">Vajuta mind > TTÜ</a></h1>
+			<h4 id="aeg"></h4>
+			<h4 id="stop" style="display: none;"></h4>
+		</div>
+		<div class="text">
+			<h3> Marti Kingisepp </h3>
+			<span id="tekst">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet nunc sit amet nunc condimentum ultricies. Donec cursus nisl eget nisl suscipit, et suscipit purus euismod. Pellentesque lobortis, urna eget consectetur auctor, ex odio aliquet mi, quis venenatis quam purus et ante. Aliquam consequat quam eu sapien semper, ut volutpat justo pretium. Etiam nibh nunc, dignissim sed justo convallis, convallis maximus tellus. Vivamus ac dui ipsum. Ut quis dolor et elit finibus pretium. Quisque semper ante sit amet velit iaculis, ac sagittis lacus aliquam. Maecenas ligula erat, rhoncus eget tellus sed, fringilla mollis velit. Suspendisse sollicitudin fringilla est quis semper. Nulla lacinia elementum dui vitae hendrerit. Proin faucibus elit ac condimentum suscipit. Vivamus gravida urna quis lacus suscipit, vestibulum mattis eros finibus. Aenean risus nulla, venenatis nec dignissim sed, posuere efficitur mauris. Quisque nec dui bibendum, laoreet orci in, molestie lorem. </span>
+			<img id="pilt" style="display: none; margin-left: auto; margin-right: auto;" src="http://lambda.ee/w/images/7/7a/Matrix.jpg"></img>
+		</div>
+		<table>
+			<h3>Nupud muudavad lehekülje sisu!</h3> 
+			<! Pole tegelikult nupud kuid käsitlen neid nuppudena >
+			<tr>
+				<th id="1" onclick="vahetaVarvi(1);stop()">VAJUTA MIND!</th>
+				<th id="2" onclick="vahetaVarvi(2)">VAJUTA MIND!</th>
+			</tr>
+			<tr>
+				<th id="3" onclick="vahetaVarvi(3)">VAJUTA MIND!</th>
+				<th id="4" onclick="vahetaVarvi(4)">VAJUTA MIND!</th>
+			</tr>
+		</table>
+		<script>
+			var x = 0;
+			var i;
+			function aeg(time){
+				var tana = new Date();
+				var h = tana.getHours();
+				var m = tana.getMinutes();
+				var s = tana.getSeconds();
+				document.getElementById('aeg').innerHTML=h + ":" + m + ":" + s;
+				var t = setTimeout(aeg, 100);
+			}
+			
+			function stop()
+			{
+				document.getElementById('aeg').style.display = "none";
+				var tana = new Date();
+				var h = tana.getHours();
+				var m = tana.getMinutes();
+				var s = tana.getSeconds();
+				document.getElementById('stop').innerHTML=h + ":" + m + ":" + s;
+				document.getElementById('stop').style.display = "block";
+			}
+			
+			
+			function vahetaVarvi(number){
+				document.getElementById(number).innerHTML = "SA VAJUTASID MIND!";
+				x++;
+				if (number == 1){
+					document.getElementById("pealkiri").innerHTML = "Za warudo!";
+					document.getElementById("pealkiri").style.display = "block";
+					document.getElementById("ttu").style.display = "none";
+					document.body.style.backgroundColor = "#9999ff";	
+				}
+				if (number == 2){
+					document.getElementById("pealkiri").innerHTML = "Martikli nr: 185682";
+					document.getElementById("pealkiri").style.display = "block";
+					document.getElementById("ttu").style.display = "none";
+					document.getElementById("tekst").style.display = "none";
+					document.getElementById("pilt").style.display = "block";
+					document.body.style.backgroundColor = "#ff6666";
+					document.getElementById('aeg').style.display = "block";
+					document.getElementById('stop').style.display = "none";
+				}
+				if (number == 3){
+					document.getElementById("pealkiri").innerHTML = "ITI0101";
+					document.getElementById("pealkiri").style.display = "block";
+					document.getElementById("ttu").style.display = "none";
+					document.body.style.backgroundColor = "#ffffff";
+					document.getElementById('aeg').style.display = "block";
+					document.getElementById('stop').style.display = "none";
+				}
+				if (number == 4){
+					document.getElementById("pealkiri").style.display = "none";
+					document.getElementById("ttu").style.display = "block";
+					document.body.style.backgroundColor = "#ffff66";
+					document.getElementById('aeg').style.display = "block";
+					document.getElementById('stop').style.display = "none";
+					
+				}
+				
+				if (x == 4){
+				document.getElementById("1").innerHTML = "VAJUTA MIND!";
+				document.getElementById("2").innerHTML = "VAJUTA MIND!";
+				document.getElementById("3").innerHTML = "VAJUTA MIND!";
+				document.getElementById("4").innerHTML = "VAJUTA MIND!";
+				document.getElementById("tekst").style.display = "block";
+				document.getElementById("pilt").style.display = "none";
+				x = 0;
+				}	
+			}
+					
+		</script>
 	</body>
 </html>

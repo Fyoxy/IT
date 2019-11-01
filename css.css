@@ -1,5 +1,32 @@
 html {scroll-behavior:smooth}
 
 body {
-	background-image: 
+	font-family: 'Roboto', sans-serif;
+	background-color: aquamarine;
+	text-align: center;
 }
+
+h3 {
+	text-align: center;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th, td {
+	padding: 50px 50px 50px 50px;
+	border: 10px solid black;
+}
+
+.pealkiri {
+	text-align: center;
+}
+
+.text {
+	padding: 5% 15% 5% 15%;
+	text-align: justify;
+}
+
+
